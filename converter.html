@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Currency Converter - Multi-Currency Converter for Android | Nikolay Milovidov</title>
+    <meta name="description" content="Download Just Currency Converter - clean and intuitive currency conversion app for Android">
+    <style>
+        :root {
+            --primary-color: #2d3748;
+            --secondary-color: #4a5568;
+            --accent-color: #3182ce;
+            --background-color: #f7fafc;
+            --currency-color: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .app-hero {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            align-items: start;
+        }
+        
+        .app-icon-large {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            object-fit: cover;
+            justify-self: center;
+        }
+        
+        .app-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .app-tagline {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .platform-badge-large {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #3ddc84;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .download-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .platform-download {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: #3ddc84;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            background-color: #2cb472;
+        }
+        
+        .features-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature {
+            padding: 1.5rem;
+            border-left: 4px solid var(--currency-color);
+            background-color: #f8fafc;
+        }
+        
+        .feature-category {
+            margin-bottom: 2rem;
+        }
+        
+        .feature-category h3 {
+            color: var(--currency-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .currency-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--currency-color);
+        }
+        
+        .instructions {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .instruction-step {
+            padding: 1.5rem;
+            background: #f0f9ff;
+            border-radius: 8px;
+        }
+        
+        .use-cases {
+            background: #e6fffa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #38b2ac;
+        }
+        
+        .support-section {
+            background: #fff3cd;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .app-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .features-grid, .instructions-grid, .currency-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="back-link">← Back to All Apps</a>
+    </header>
+
+    <main>
+        <section class="app-hero">
+            <img src="images/converter-icon.png" alt="Just Currency Converter Icon" class="app-icon-large">
+            <div class="app-info">
+                <span class="platform-badge-large">Android Mobile</span>
+                <h1>Just Currency Converter</h1>
+                <p class="app-tagline">Clean and intuitive currency conversion</p>
+                <p>A comprehensive currency conversion app supporting 150+ world currencies with live exchange rates. Perfect companion for travelers, business people, and anyone dealing with foreign currencies.</p>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h2>Download Just Currency Converter for Android</h2>
+            <div class="platform-download">
+                <h3>Android Mobile Version</h3>
+                <p>Version 1.0.0 • 8.7 MB • Android 8.0+</p>
+                <a href="downloads/android/converter-latest.apk" class="btn" download>
+                    📱 Download APK
+                </a>
+                <p><small>Requires Android 8.0 (API 26) or higher</small></p>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2>Currency Coverage</h2>
+            
+            <div class="currency-stats">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div>World Currencies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div>Interface Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div>Live Rates Updates</div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>💱 Core Conversion Features</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h4>Instant Conversion</h4>
+                        <p>Real-time conversion between 150+ currencies with live exchange rates</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Live Exchange Rates</h4>
+                        <p>Automatic updates with the latest market rates</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Smart Search</h4>
+                        <p>Intelligent currency search supporting multiple languages</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Custom Rates</h4>
+                        <p>Set your own exchange values for specific needs</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>📊 Smart Features</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h4>Usage History</h4>
+                        <p>Learns your frequent conversions for quick access</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Built-in Calculator</h4>
+                        <p>Perform quick calculations alongside conversions</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Quick Swap</h4>
+                        <p>One-tap switching between currency pairs</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Smart Sorting</h4>
+                        <p>Currencies sorted by popularity and usage frequency</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>🎨 User Experience</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h4>Modern Design</h4>
+                        <p>Clean, intuitive interface with day/night themes</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Visual Identification</h4>
+                        <p>Country flags for easy currency recognition</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Responsive Design</h4>
+                        <p>Optimized for all screen sizes and orientations</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Haptic Feedback</h4>
+                        <p>Tactile response for all operations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <h3>🚀 Perfect For</h3>
+            <div class="features-grid">
+                <div class="feature">
+                    <h4>Travelers</h4>
+                    <p>Quick currency conversions while abroad</p>
+                </div>
+                <div class="feature">
+                    <h4>Business Trips</h4>
+                    <p>Essential tool for international business</p>
+                </div>
+                <div class="feature">
+                    <h4>Online Shopping</h4>
+                    <p>Convert prices from international websites</p>
+                </div>
+                <div class="feature">
+                    <h4>Financial Operations</h4>
+                    <p>Daily currency calculations and comparisons</p>
+                </div>
+                <div class="feature">
+                    <h4>Educational Purposes</h4>
+                    <p>Learn about world currencies and exchange rates</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="instructions">
+            <h2>Key Currencies Supported</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h4>Major Currencies</h4>
+                    <p>USD, EUR, GBP, JPY, CHF, CAD, AUD</p>
+                </div>
+                <div class="feature">
+                    <h4>Asian Markets</h4>
+                    <p>CNY, JPY, KRW, SGD, HKD, INR, TWD</p>
+                </div>
+                <div class="feature">
+                    <h4>European Currencies</h4>
+                    <p>EUR, GBP, RUB, SEK, NOK, DKK, PLN</p>
+                </div>
+                <div class="feature">
+                    <h4>Middle East & Africa</h4>
+                    <p>AED, SAR, QAR, ZAR, EGP, TRY</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="instructions">
+            <h2>Installation Instructions for Android</h2>
+            <div class="instructions-grid">
+                <div class="instruction-step">
+                    <h4>1. Download APK</h4>
+                    <p>Click the download button above to get the Currency Converter APK file</p>
+                </div>
+                <div class="instruction-step">
+                    <h4>2. Enable Unknown Sources</h4>
+                    <p>Go to Settings → Security → Enable "Install from unknown sources"</p>
+                </div>
+                <div class="instruction-step">
+                    <h4>3. Install App</h4>
+                    <p>Open the downloaded APK file and follow installation prompts</p>
+                </div>
+                <div class="instruction-step">
+                    <h4>4. Start Converting</h4>
+                    <p>Launch the app and begin converting currencies instantly</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h3>Support the Developer</h3>
+            <p>The app is free to use, but if you find it helpful for your currency conversion needs, you can support further development:</p>
+            <p><a href="https://www.tbank.ru/cf/8bFM1SGmXJC">https://www.tbank.ru/cf/8bFM1SGmXJC</a></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nikolay Milovidov. Just Currency Converter is free to use.</p>
+        <p><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></p>
+    </footer>
+</body>
+</html>
