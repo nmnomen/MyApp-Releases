@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyApp - Downloads</title>
+    <title>Mobile & Desktop Apps by Nikolay Milovidov</title>
+    <meta name="description" content="Download Android and Windows apps by Nikolay Milovidov - CopyBara, BabyBara, Just Currency Converter">
     <style>
         :root {
             --primary-color: #2d3748;
@@ -23,10 +24,7 @@
             line-height: 1.6;
             color: var(--primary-color);
             background-color: var(--background-color);
-        }
-        
-        .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -34,35 +32,65 @@
         .header {
             text-align: center;
             margin-bottom: 3rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
         }
         
         .logo {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
         
-        .download-section {
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .app-card {
             background: white;
             border-radius: 10px;
             padding: 2rem;
-            margin-bottom: 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .platform {
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+        
+        .app-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .app-description {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+        
+        .download-links {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .platform:last-child {
-            border-bottom: none;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background-color: var(--accent-color);
             color: white;
@@ -70,81 +98,160 @@
             border-radius: 5px;
             font-weight: 600;
             transition: background-color 0.3s;
+            flex: 1;
+            min-width: 140px;
+            justify-content: center;
         }
         
         .btn:hover {
             background-color: #2c5aa0;
         }
         
-        .version {
+        .btn-android {
+            background-color: #3ddc84;
+        }
+        
+        .btn-android:hover {
+            background-color: #2cb472;
+        }
+        
+        .btn-windows {
+            background-color: #0078d4;
+        }
+        
+        .btn-windows:hover {
+            background-color: #106ebe;
+        }
+        
+        .btn-details {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-details:hover {
+            background-color: #2d3748;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
             color: var(--secondary-color);
-            font-size: 0.9rem;
         }
         
-        .file-info {
-            font-size: 0.8rem;
-            color: #718096;
-            margin-top: 0.5rem;
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
         
-        .instructions {
-            background: #e6fffa;
-            border-left: 4px solid #38b2ac;
-            padding: 1rem;
-            margin: 1rem 0;
+        .nav-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-links {
+                flex-direction: column;
+            }
+            
+            .btn {
+                min-width: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">📱</div>
-            <h1>MyApp Downloads</h1>
-            <p>Official distribution channel for MyApp applications</p>
-        </header>
+    <header class="header">
+        <div class="logo">📱</div>
+        <h1>Apps by Nikolay Milovidov</h1>
+        <p>Download mobile and desktop applications for Android and Windows</p>
+        
+        <nav class="nav-links">
+            <a href="https://milovision.art">Main Website</a>
+            <a href="https://github.com/yourusername/MyApp-Releases">GitHub Repository</a>
+            <a href="mailto:contact@milovision.art">Contact</a>
+        </nav>
+    </header>
 
-        <section class="download-section">
-            <h2>Download Latest Versions</h2>
-            
-            <div class="platform">
-                <div>
-                    <h3>Android</h3>
-                    <p class="version">Version 1.0.0</p>
-                    <p class="file-info">APK • 15.2 MB • SHA256: a1b2c3...</p>
-                </div>
-                <a href="android/latest/app-v1.0.0.apk" class="btn">Download APK</a>
+    <main class="apps-grid">
+        <!-- CopyBara App -->
+        <div class="app-card">
+            <img src="images/copybara-icon.png" alt="CopyBara Icon" class="app-icon">
+            <h2 class="app-title">CopyBara</h2>
+            <p class="app-description">Quick text copying tool. Create buttons with frequently used phrases and copy them to clipboard with one click.</p>
+            <div class="download-links">
+                <a href="downloads/android/copybara-latest.apk" class="btn btn-android" download>
+                    📱 Android APK
+                </a>
+                <a href="downloads/windows/copybara-latest.exe" class="btn btn-windows" download>
+                    💻 Windows EXE
+                </a>
+                <a href="copybara.html" class="btn btn-details">
+                    📖 Details
+                </a>
             </div>
-            
-            <div class="platform">
-                <div>
-                    <h3>Windows</h3>
-                    <p class="version">Version 1.0.0</p>
-                    <p class="file-info">EXE • 8.7 MB • SHA256: e5f6g7...</p>
-                </div>
-                <a href="windows/latest/app-v1.0.0.exe" class="btn">Download EXE</a>
-            </div>
-        </section>
-
-        <div class="instructions">
-            <h3>Installation Instructions</h3>
-            <p><strong>Android:</strong> Enable "Install from unknown sources" in settings before installing.</p>
-            <p><strong>Windows:</strong> Run as administrator for best experience.</p>
         </div>
 
-        <section class="download-section">
-            <h2>Additional Resources</h2>
-            <ul>
-                <li><a href="docs/installation.md">Detailed Installation Guide</a></li>
-                <li><a href="docs/changelog.md">Changelog</a></li>
-                <li><a href="https://github.com/yourusername/MyApp-Releases/releases">All Releases</a></li>
-                <li><a href="checksums.txt">Verify Checksums</a></li>
-            </ul>
-        </section>
-        
-        <footer style="text-align: center; margin-top: 3rem; color: var(--secondary-color);">
-            <p>&copy; 2024 MyApp. All rights reserved.</p>
-            <p>License: MIT</p>
-        </footer>
-    </div>
+        <!-- BabyBara App -->
+        <div class="app-card">
+            <img src="images/babybara-icon.png" alt="BabyBara Icon" class="app-icon">
+            <h2 class="app-title">BabyBara</h2>
+            <p class="app-description">Simple app for tracking your baby's feeding, sleep, pumping, and weight with daily statistics.</p>
+            <div class="download-links">
+                <a href="downloads/android/babybara-latest.apk" class="btn btn-android" download>
+                    📱 Android APK
+                </a>
+                <a href="downloads/windows/babybara-latest.exe" class="btn btn-windows" download>
+                    💻 Windows EXE
+                </a>
+                <a href="babybara.html" class="btn btn-details">
+                    📖 Details
+                </a>
+            </div>
+        </div>
+
+        <!-- Currency Converter App -->
+        <div class="app-card">
+            <img src="images/converter-icon.png" alt="Currency Converter Icon" class="app-icon">
+            <h2 class="app-title">Just Currency Converter</h2>
+            <p class="app-description">Clean and intuitive currency conversion app supporting 150+ world currencies.</p>
+            <div class="download-links">
+                <a href="downloads/android/converter-latest.apk" class="btn btn-android" download>
+                    📱 Android APK
+                </a>
+                <a href="downloads/windows/converter-latest.exe" class="btn btn-windows" download>
+                    💻 Windows EXE
+                </a>
+                <a href="converter.html" class="btn btn-details">
+                    📖 Details
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="nav-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="https://milovision.art/contact.html">Support</a>
+        </div>
+        <p>&copy; 2025 Nikolay Milovidov. All apps are free to download and use.</p>
+        <p>All data is stored locally on your device for privacy.</p>
+    </footer>
 </body>
 </html>
