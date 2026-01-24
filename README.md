@@ -5,11 +5,11 @@
 ![Platforms](https://img.shields.io/badge/Platform-Android%20%7C%20Windows-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
 
-🌐 **Live Website:** [https://nmnomen.github.io/MyApp-Releases/](https://nmnomen.github.io/MyApp-Releases/)
+**Live Website:** [https://nmnomen.github.io/MyApp-Releases/](https://nmnomen.github.io/MyApp-Releases/)
 
 Official download website for mobile and desktop applications developed by Nikolay Milovidov.
 
-## 📱 Available Applications
+## Available Applications
 
 ### Android Mobile Apps
 
@@ -25,7 +25,7 @@ Official download website for mobile and desktop applications developed by Nikol
 |-----|---------|-------------|----------|
 | **CopyBara** | 1.0.0 | Quick text copying tool for repetitive tasks and templates | [EXE](downloads/windows/CopyBara_Setup.exe) |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### View the Website
 - **Live Site:** [https://nmnomen.github.io/MyApp-Releases/](https://nmnomen.github.io/MyApp-Releases/)
