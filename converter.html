@@ -5,263 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just Currency Converter - Multi-Currency Converter for Android | Nikolay Milovidov</title>
     <meta name="description" content="Download Just Currency Converter - clean and intuitive currency conversion app for Android">
-    <style>
-        :root {
-            --primary-color: #2d3748;
-            --secondary-color: #4a5568;
-            --accent-color: #3182ce;
-            --background-color: #f7fafc;
-            --currency-color: #10b981;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--primary-color);
-            background-color: var(--background-color);
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            margin-bottom: 2rem;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        .app-hero {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            align-items: start;
-        }
-        
-        .app-icon-large {
-            width: 150px;
-            height: 150px;
-            border-radius: 20px;
-            object-fit: cover;
-            justify-self: center;
-        }
-        
-        .app-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .app-tagline {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .platform-badge-large {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: #3ddc84;
-            color: white;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .download-section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .platform-download {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background-color: #3ddc84;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            margin: 1rem 0;
-            font-size: 1.1rem;
-        }
-        
-        .btn:hover {
-            background-color: #2cb472;
-        }
-        
-        .features-section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .feature {
-            padding: 1.5rem;
-            border-left: 4px solid var(--currency-color);
-            background-color: #f8fafc;
-        }
-        
-        .feature-category {
-            margin-bottom: 2rem;
-        }
-        
-        .feature-category h3 {
-            color: var(--currency-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .currency-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--currency-color);
-        }
-        
-        .instructions {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .instructions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .instruction-step {
-            padding: 1.5rem;
-            background: #f0f9ff;
-            border-radius: 8px;
-        }
-        
-        .use-cases {
-            background: #e6fffa;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid #38b2ac;
-        }
-        
-        .support-section {
-            background: #fff3cd;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0;
-            color: var(--secondary-color);
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .app-hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .features-grid, .instructions-grid, .currency-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="all.css">
 </head>
-<body>
+<body class="converter">
     <header class="header">
+        <h1>Apps by Nikolay Milovidov</h1>
+        <br>
         <a href="index.html" class="back-link">← Back to All Apps</a>
     </header>
 
     <main>
         <section class="app-hero">
-            <img src="images/converter-icon.png" alt="Just Currency Converter Icon" class="app-icon-large">
+            <img src="images/converter.png" alt="Just Currency Converter" class="app-icon-large">
             <div class="app-info">
                 <span class="platform-badge-large">Android Mobile</span>
                 <h1>Just Currency Converter</h1>
                 <p class="app-tagline">Clean and intuitive currency conversion</p>
-                <p>A comprehensive currency conversion app supporting 150+ world currencies with live exchange rates. Perfect companion for travelers, business people, and anyone dealing with foreign currencies.</p>
+                <p>A currency conversion app supporting 150+ world currencies with live exchange rates. Perfect companion for travelers, business people, and anyone dealing with foreign currencies.</p>
+                <br>
+                <div class="languages-badge">
+                    🌐 6 Languages
+                    <div class="languages-list">
+                        <span class="language-tag">English</span>
+                        <span class="language-tag">Deutsch</span>
+                        <span class="language-tag">Français</span>
+                        <span class="language-tag">Español</span>
+                        <span class="language-tag">Русский</span>
+                        <span class="language-tag">中文</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="download-section">
-            <h2>Download Just Currency Converter for Android</h2>
-            <div class="platform-download">
-                <h3>Android Mobile Version</h3>
-                <p>Version 1.0.0 • 8.7 MB • Android 8.0+</p>
-                <a href="downloads/android/converter-latest.apk" class="btn" download>
-                    📱 Download APK
-                </a>
-                <p><small>Requires Android 8.0 (API 26) or higher</small></p>
+        <section class="version-selector">
+            <h2>Choose Version to Download</h2>
+            <br>
+            <div class="version-tabs">
+                <div class="version-tab active" data-version="android">
+                    Android
+                </div>
+                <div class="version-tab" data-version="android-huawei">
+                    Android & Huawei
+                </div>
+                <div class="version-tab" data-version="huawei">
+                    Huawei Only
+                </div>
             </div>
+
+            <div id="version-android" class="version-content active">
+                <h3>Version 1.6.2 <span class="version-badge stable">Android</span></h3>
+                <p><strong>Released:</strong> January 16, 2026</p>
+                <p><strong>Size:</strong> 5.4 MB</p>
+                <p><strong>Compatibility:</strong> Android 8.0+</p>
+                <a href="downloads/android/converter/Just Currency Converter 1.6.2.apk" class="btn" download>Download v1.6.2</a>
+            </div>
+
+            <div id="version-android-huawei" class="version-content">
+                <h3>Version 1.5.0 <span class="version-badge android">Android & Huawei</span></h3>
+                <p><strong>Released:</strong> May 22, 2025</p>
+                <p><strong>Size:</strong> 6.7 MB</p>
+                <p><strong>Compatibility:</strong> Android 8.0+ and Huawei devices with HMS Core</p>
+                <a href="downloads/android/converter/Just Currency Converter 1.5.0.apk" class="btn" download>Download v1.5.0</a>
+            </div>
+
+            <div id="version-huawei" class="version-content">
+                <h3>Version 1.4.0 <span class="version-badge huawei">Huawei Only</span></h3>
+                <p><strong>Released:</strong> May 24, 2025</p>
+                <p><strong>Size:</strong> 6.7 MB</p>
+                <p><strong>Compatibility:</strong> Huawei devices with HMS Core</p>
+                <a href="downloads/android/converter/Just Currency Converter 1.4.0.apk" class="btn" download>Download v1.4.0</a>
+            </div>
+        </section>
+
+        <section class="version-selector download-archive">
+            <h3>Version Archive</h3>
+            <p>All previous versions are available for download:</p>
+
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Release Date</th>
+                        <th>Size</th>
+                        <th>Platform</th>
+                        <th>Notes</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.6.2</td>
+                        <td>2026-01-16</td>
+                        <td>5.4 MB</td>
+                        <td>Android</td>
+                        <td>Stable release for Google Play</td>
+                        <td><a href="downloads/android/Just Currency Converter 1.6.2.apk">APK</a></td>
+                    </tr>
+                    <tr>
+                        <td>1.5.0</td>
+                        <td>2025-05-22</td>
+                        <td>6.7 MB</td>
+                        <td>Android & Huawei</td>
+                        <td>Added Huawei support</td>
+                        <td><a href="downloads/android/Just Currency Converter 1.5.0.apk">APK</a></td>
+                    </tr>
+                    <tr>
+                        <td>1.4.0</td>
+                        <td>2025-05-24</td>
+                        <td>6.7 MB</td>
+                        <td>Huawei only</td>
+                        <td>Fixed Chinese flags and currencies</td>
+                        <td><a href="downloads/android/Just Currency Converter 1.4.0.apk">APK</a></td>
+                    </tr>					
+                </tbody>
+            </table>
         </section>
 
         <section class="features-section">
             <h2>Currency Coverage</h2>
-            
+
             <div class="currency-stats">
                 <div class="stat-card">
                     <div class="stat-number">150+</div>
@@ -278,7 +140,7 @@
             </div>
 
             <div class="feature-category">
-                <h3>💱 Core Conversion Features</h3>
+                <h3>Core Conversion Features</h3>
                 <div class="features-grid">
                     <div class="feature">
                         <h4>Instant Conversion</h4>
@@ -300,7 +162,7 @@
             </div>
 
             <div class="feature-category">
-                <h3>📊 Smart Features</h3>
+                <h3>Smart Features</h3>
                 <div class="features-grid">
                     <div class="feature">
                         <h4>Usage History</h4>
@@ -320,32 +182,22 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="feature-category">
-                <h3>🎨 User Experience</h3>
-                <div class="features-grid">
-                    <div class="feature">
-                        <h4>Modern Design</h4>
-                        <p>Clean, intuitive interface with day/night themes</p>
-                    </div>
-                    <div class="feature">
-                        <h4>Visual Identification</h4>
-                        <p>Country flags for easy currency recognition</p>
-                    </div>
-                    <div class="feature">
-                        <h4>Responsive Design</h4>
-                        <p>Optimized for all screen sizes and orientations</p>
-                    </div>
-                    <div class="feature">
-                        <h4>Haptic Feedback</h4>
-                        <p>Tactile response for all operations</p>
-                    </div>
+        <section class="screenshots-section">
+            <h2>App Screenshots</h2>
+            <div class="screenshots-container">
+                <div class="screenshot-item">
+                    <img src="images/converter-en.png" alt="Just Currency Converter - English Interface" class="screenshot-image">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/converter-es.png" alt="Just Currency Converter- Spanish interface" class="screenshot-image">
                 </div>
             </div>
         </section>
 
         <section class="use-cases">
-            <h3>🚀 Perfect For</h3>
+            <h3>Perfect For</h3>
             <div class="features-grid">
                 <div class="feature">
                     <h4>Travelers</h4>
@@ -362,32 +214,6 @@
                 <div class="feature">
                     <h4>Financial Operations</h4>
                     <p>Daily currency calculations and comparisons</p>
-                </div>
-                <div class="feature">
-                    <h4>Educational Purposes</h4>
-                    <p>Learn about world currencies and exchange rates</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="instructions">
-            <h2>Key Currencies Supported</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <h4>Major Currencies</h4>
-                    <p>USD, EUR, GBP, JPY, CHF, CAD, AUD</p>
-                </div>
-                <div class="feature">
-                    <h4>Asian Markets</h4>
-                    <p>CNY, JPY, KRW, SGD, HKD, INR, TWD</p>
-                </div>
-                <div class="feature">
-                    <h4>European Currencies</h4>
-                    <p>EUR, GBP, RUB, SEK, NOK, DKK, PLN</p>
-                </div>
-                <div class="feature">
-                    <h4>Middle East & Africa</h4>
-                    <p>AED, SAR, QAR, ZAR, EGP, TRY</p>
                 </div>
             </div>
         </section>
@@ -412,18 +238,49 @@
                     <p>Launch the app and begin converting currencies instantly</p>
                 </div>
             </div>
+
+            <div class="language-note-box">
+                <h4>Language Selection</h4>
+                <p>Just Currency Converter automatically detects your device language and switches between English, German, French, Spanish, Russian, and Chinese accordingly</p>
+                <div class="language-tags">
+                    <span class="language-tag-colored lang-english">English</span>
+                    <span class="language-tag-colored lang-german">Deutsch</span>
+                    <span class="language-tag-colored lang-french">Français</span>
+                    <span class="language-tag-colored lang-spanish">Español</span>
+                    <span class="language-tag-colored lang-russian">Русский</span>
+                    <span class="language-tag-colored lang-chinese">中文</span>
+                </div>
+            </div>
         </section>
 
         <section class="support-section">
-            <h3>Support the Developer</h3>
-            <p>The app is free to use, but if you find it helpful for your currency conversion needs, you can support further development:</p>
-            <p><a href="https://www.tbank.ru/cf/8bFM1SGmXJC">https://www.tbank.ru/cf/8bFM1SGmXJC</a></p>
+            <p>The app is free to use, but if you find it helpful, you can support further development:</p>
+            <a href="https://milovision.art/donate.html" class="btn btn-support"><span>❤</span> SUPPORT THE DEVELOPER</a>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Nikolay Milovidov. Just Currency Converter is free to use.</p>
+        <p>&copy; 2026 Nikolay Milovidov. Just Currency Converter is free to use</p>
         <p><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.version-tab');
+            const contents = document.querySelectorAll('.version-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const version = this.getAttribute('data-version');
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    contents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(`version-${version}`).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -5,251 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BabyBara - Baby Tracking App for Android | Nikolay Milovidov</title>
     <meta name="description" content="Download BabyBara - comprehensive baby tracking application for Android">
-    <style>
-        :root {
-            --primary-color: #2d3748;
-            --secondary-color: #4a5568;
-            --accent-color: #3182ce;
-            --background-color: #f7fafc;
-            --baby-color: #f093fb;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--primary-color);
-            background-color: var(--background-color);
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            margin-bottom: 2rem;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        .app-hero {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            align-items: start;
-        }
-        
-        .app-icon-large {
-            width: 150px;
-            height: 150px;
-            border-radius: 20px;
-            object-fit: cover;
-            justify-self: center;
-        }
-        
-        .app-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .app-tagline {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .platform-badge-large {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: #3ddc84;
-            color: white;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .download-section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .platform-download {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background-color: #3ddc84;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            margin: 1rem 0;
-            font-size: 1.1rem;
-        }
-        
-        .btn:hover {
-            background-color: #2cb472;
-        }
-        
-        .features-section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .feature {
-            padding: 1.5rem;
-            border-left: 4px solid var(--baby-color);
-            background-color: #f8fafc;
-        }
-        
-        .feature-category {
-            margin-bottom: 2rem;
-        }
-        
-        .feature-category h3 {
-            color: var(--baby-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .instructions {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .instructions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .instruction-step {
-            padding: 1.5rem;
-            background: #f0f9ff;
-            border-radius: 8px;
-        }
-        
-        .privacy-section {
-            background: #d1ecf1;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid #17a2b8;
-        }
-        
-        .support-section {
-            background: #fff3cd;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0;
-            color: var(--secondary-color);
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .app-hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .features-grid, .instructions-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="all.css">
 </head>
-<body>
+<body class="babybara">
     <header class="header">
+        <h1>Apps by Nikolay Milovidov</h1>
+        <br>
         <a href="index.html" class="back-link">← Back to All Apps</a>
     </header>
 
     <main>
         <section class="app-hero">
-            <img src="images/babybara-icon.png" alt="BabyBara Icon" class="app-icon-large">
+            <img src="images/babybara.png" alt="BabyBara" class="app-icon-large">
             <div class="app-info">
                 <span class="platform-badge-large">Android Mobile</span>
                 <h1>BabyBara</h1>
-                <p class="app-tagline">Comprehensive baby tracking application</p>
-                <p>Monitor and record your baby's daily activities, feeding patterns, sleep schedules, and growth metrics. With a clean, intuitive interface and multiple theme options, track your baby's development while keeping all data securely stored on your device.</p>
+                <p class="app-tagline">Baby tracking application</p>
+                <p>Monitor and record breast pumping, feeding patterns, sleep schedules, and growth metrics. With a clean, intuitive interface and multiple theme options, track your baby's development while keeping all data securely stored on your device.</p><br>
+				<div class="languages-badge">
+                    🌐 1 Language
+                    <div class="languages-list">
+                        <span class="language-tag">English</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="download-section">
-            <h2>Download BabyBara for Android</h2>
             <div class="platform-download">
                 <h3>Android Mobile Version</h3>
-                <p>Version 1.0.0 • 15.2 MB • Android 8.0+</p>
-                <a href="downloads/android/babybara-latest.apk" class="btn" download>
-                    📱 Download APK
-                </a>
-                <p><small>Requires Android 8.0 (API 26) or higher</small></p>
+                <p>Version 1.0.2 • 5.1 MB • Android 8.0+</p>
+                <a href="downloads/android/BabyBara_1.0.2.apk" class="btn" download>Download APK</a>
             </div>
         </section>
 
         <section class="features-section">
             <h2>Features</h2>
-            
+
             <div class="feature-category">
-                <h3>📊 Tracking Capabilities</h3>
+                <h3>Tracking Capabilities</h3>
                 <div class="features-grid">
                     <div class="feature">
                         <h4>Feeding Tracking</h4>
                         <p>Record breast milk, formula, and water intake with time and volume</p>
                     </div>
                     <div class="feature">
-                        <h4>Pumping Tracking</h4>
+                        <h4>Breast Pumping Tracking</h4>
                         <p>Monitor pumping sessions with breast selection and volume</p>
                     </div>
                     <div class="feature">
@@ -264,7 +65,7 @@
             </div>
 
             <div class="feature-category">
-                <h3>📈 Analytics & Visualization</h3>
+                <h3>Analytics & Visualization</h3>
                 <div class="features-grid">
                     <div class="feature">
                         <h4>Interactive Calendar</h4>
@@ -286,7 +87,7 @@
             </div>
 
             <div class="feature-category">
-                <h3>⚙️ Customization & Management</h3>
+                <h3>Customization & Management</h3>
                 <div class="features-grid">
                     <div class="feature">
                         <h4>Multiple Themes</h4>
@@ -308,33 +109,51 @@
             </div>
         </section>
 
+        <section class="screenshots-section">
+            <h2>App Screenshots</h2>
+            <div class="screenshots-container">
+                <div class="screenshot-item">
+                    <img src="images/babybara-1.png" alt="BabyBara - Main dashboard with pumping tracking" class="screenshot-image">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/babybara-2.png" alt="BabyBara - Main dashboard with sleep" class="screenshot-image">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/babybara-3.png" alt="BabyBara - Menu" class="screenshot-image">
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/babybara-4.png" alt="BabyBara - Settings" class="screenshot-image">
+                </div>
+            </div>
+        </section>
+
         <section class="instructions">
             <h2>How to Use BabyBara</h2>
             <div class="instructions-grid">
                 <div class="instruction-step">
-                    <h4>📅 Select a Date</h4>
+                    <h4>Select a Date</h4>
                     <p>Click on any date in the calendar to view or add data for that specific day</p>
                 </div>
                 <div class="instruction-step">
-                    <h4>📝 Choose Category</h4>
+                    <h4>Choose Category</h4>
                     <p>Switch between Feeding, Pumping, Sleep, and Weight tabs to log different activities</p>
                 </div>
                 <div class="instruction-step">
-                    <h4>➕ Add Entries</h4>
+                    <h4>Add Entries</h4>
                     <p><strong>Feeding:</strong> Time, type (breast milk/formula/water), volume<br>
                        <strong>Pumping:</strong> Time, breast (left/right/both), volume<br>
                        <strong>Sleep:</strong> Start and end time<br>
                        <strong>Weight:</strong> Weight in kilograms</p>
                 </div>
                 <div class="instruction-step">
-                    <h4>📊 View Statistics</h4>
+                    <h4>View Statistics</h4>
                     <p>Check daily summaries and trend charts to monitor your baby's progress and patterns</p>
                 </div>
             </div>
         </section>
 
         <section class="privacy-section">
-            <h3>🔒 Privacy & Security</h3>
+            <h3>Privacy & Security</h3>
             <p>Your baby's data is precious and private. BabyBara respects that:</p>
             <div class="features-grid">
                 <div class="feature">
@@ -375,14 +194,13 @@
         </section>
 
         <section class="support-section">
-            <h3>Support the Developer</h3>
-            <p>The app is free to use, but if you find it helpful for tracking your baby's development, you can support further development:</p>
-            <p><a href="https://www.tbank.ru/cf/8bFM1SGmXJC">https://www.tbank.ru/cf/8bFM1SGmXJC</a></p>
+            <p>The app is free to use, but if you find it helpful, you can support further development:</p>
+            <a href="https://milovision.art/donate.html" class="btn btn-support"><span>❤</span> SUPPORT THE DEVELOPER</a>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Nikolay Milovidov. BabyBara is free to use.</p>
+        <p>&copy; 2026 Nikolay Milovidov. BabyBara is free to use</p>
         <p><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Use</a></p>
     </footer>
 </body>
